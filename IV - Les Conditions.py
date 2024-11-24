@@ -28,7 +28,7 @@ x = int( 2 )
 y = int( 6 )
 z = bool( True )
 
-    # On peut traduire par : si ((x egal 2 et x (superieur ou egal à 2)) et le reste de la division euclidienne de y par 2 egal 0) ou z est vrai
+    # On peut traduire par : si (((x egal 2) ET (x superieur ou egal à 2)) ET (le reste de la division euclidienne de y par 2 egal 0)) OU (z est vrai)
 if ((x == 2 and x >= 2 ) and y % 2 == 0) or z:
     print("3  : ", "Le test est vrai !")
 
@@ -117,7 +117,7 @@ elif jour == 6:
 elif jour == 7:
     print( 'Dimanche' )
 else:
-    return 'Pas un jour de la semaine'
+    print('Pas un jour de la semaine')
 
 On peut utiliser les mots clés match et case :
 
@@ -125,22 +125,29 @@ jour = int( 3 )
 
 match jour:
     case 1:
-        return 'Lundi'
+        print('Lundi')
     case 2:
-        return 'Mardi'
+        print('Mardi')
     case 3:
-        return 'Mercredi'
+        print('Mercredi')
     case 4:
-        return 'Jeudi'
+        print('Jeudi')
     case 5:
-        return 'Vendredi'
+        print('Vendredi')
     case 6:
-        return 'Samedi'
+        print('Samedi')
     case 7:
-        return 'Dimanche'
+        print('Dimanche')
     case _:
-        return 'Pas un jour de la semaine'
+        print('Pas un jour de la semaine')
 
 C'est plus efficace et cela consomme moins de mémoire.
 
+
+
+
+Sinon on peut utiliser une liste ;)
+jour = int(3)
+listeJours=["Lundi, "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+print(listeJours[jour])
 """
