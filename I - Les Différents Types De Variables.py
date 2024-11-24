@@ -15,7 +15,7 @@ b = 3.6                     # un relatif
 b = int(b)                  # va arrondir a l'entier inferieur : 3.4 donnera 3 tout comme 3.9999...
 print("3  : ", b)            
 
-c = True                    # un boolean
+c = True                    # un boolean (peut prendre deux valeurs différentes seulement, True ou False)
 c = int(c)
 print("4  : ", c)           # 1 correspond a True et 0 à False
 
@@ -30,7 +30,7 @@ print("5  : ", type(a))
 # il est possible de convertir des objets en Str
 
 b = 2                       # un string
-b = str(b)                  # la fonction str() : Crée un nouvel objet de type chaîne à partir de l'objet donné.
+b = str(b)                  # la fonction str() : Crée un nouvel objet de type chaîne de caractères à partir de l'objet donné.
 print("6  : ", type(b))
 
 c = True                    # un boolean
@@ -54,13 +54,13 @@ print("9  : ", b)           # va renvoyer False, car 0 est faux, en revanche tou
 # un bool peut aussi prendre comme valeur une condition :
 
 x = int( 3 )
-isPositive = (x > 0)        # ici, la variable isPositive prendra la valeur True si X positif sinon false
+isPositive = (x > 0)        # ici, la variable isPositive prendra la valeur True si X (strictement) positif sinon false
 print("10 : ", isPositive)
 
 """
 voici les comparateurs possibles : 
 
-a == b                      # lire a egale b
+a == b                      # lire a egal b
 a != b                      # lire a different de b
 a > b                       # lire a strictement superieur à b
 a < b                       # lire a strictement inferieur à b
@@ -82,15 +82,15 @@ print("11 : ", a)           # va retourner False si a = True et inversement
 x = int( 3 )
 isPositive = (x > 0) 
 
-isGreaterThan5 = x > 5      # comme vous le voyer les parenthèses ne sont pas obligatoire mais ajoute de la lisibilité
+isGreaterThan5 = x > 5      # comme vous le voyez les parenthèses ne sont pas obligatoires mais ajoutent de la lisibilité
 
-                            # ici, isPositiveAndGreaterThan5 prendra la valuer True si les deux conditions sont vraies
+                            # ici, isPositiveAndGreaterThan5 prendra la valeur True si les deux conditions sont vraies
                             # sinon si au moins une, ou les deux sont fausses alors cela renverra False
 isPositiveAndGreaterThan5 = isPositive and isGreaterThan5
 print("12 : ", isPositiveAndGreaterThan5)
 
                             # ici, isPositiveAndGreaterThan5 prendra la valuer True si au moins une condition est vraie ou les deux,
-                            # sinon les deux sont fausses alors cela renverra False
+                            # sinon si les deux sont fausses alors cela renverra False
 isPositiveOrGreaterThan5 = isPositive or isGreaterThan5
 print("13 : ", isPositiveOrGreaterThan5)
 
@@ -134,6 +134,6 @@ Sinon, la valeur de retour a le même type que le nombre. la precision peut êtr
 print("20 : ", f)           # va retourner un Int : 3
 
 f = 3.1415926535            # voici les 10 premières decimales de pi.
-precision = int( 2 )        # ceci est la pecision, c'est a dire le nombre de decimales que l'on souhaite conserver, ici 2
+precision = int( 2 )        # ceci est la precision, c'est a dire le nombre de decimales que l'on souhaite conserver, ici 2
 f = round(f, precision)     # la fonction round va donc retourner 3.14
 print("21 : ", f)
