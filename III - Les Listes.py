@@ -65,7 +65,7 @@ print("3  : ", liste)       # retournera : [15]
 liste = liste + [-5]        # Ou liste += [-5] 
 print("4  : ", liste)       #retournera : [15, -5]
 
-# Puis avec la méthode .append() :
+    # Puis avec la méthode .append() :
 
 liste = []
 liste.append(15)            # retournera : [15] 
@@ -90,7 +90,7 @@ Leur principal avantage est que vous pouvez accéder au dernier élément d'une 
 L'avant-dernier élément a lui l'indice -2, l'avant-avant dernier l'indice -3, etc.
 """
 
-# Les Tranches
+# Les Tranches :
 
 """
 Un autre avantage des listes,
@@ -140,7 +140,7 @@ print("12 : ", listeDeNombres[::2])
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 1er au 6ème exclu de 3 en 3 donc [1, 4]
 print("13 : ", listeDeNombres[1:6:3]) 
 
-# La Fonction len()
+# La Fonction len() :
 
 """
 L'instruction len() vous permet de connaître la longueur d'une liste, c'est-à-dire le nombre d'éléments que contient la liste.
@@ -169,3 +169,87 @@ print("15 : ", savane[0])   # Va retourner ['girafe', 4]
 
                             # Va retourner 'girafe'
 print("16 : ", savane[0][0])
+
+# Le minimum, maximum et somme d'une liste :
+
+"""
+Les fonctions min(), max() et sum() renvoient respectivement le minimum, le maximum et la somme d'une liste passée en argument :
+"""
+
+                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+listeDeNombres = [0, 1, 2, 3, 4, 5]
+
+                            # Va renvoyer la somme des termes de la liste : 1 + 2 + 3 + 4 + 5 = 15
+print("17 : ", sum(listeDeNombres) )
+
+                            # Va renvoyer le plus petit élément de la liste : 0
+print("18 : ", min(listeDeNombres) )
+
+                            # Va renvoyer le plus grand élément de la liste : 5
+print("19 : ", max(listeDeNombres) )
+
+"""
+Même si en théorie ces fonctions peuvent prendre en argument une liste de strings, 
+    on les utilisera la plupart du temps avec des types numériques (liste d'entiers et / ou de floats).
+"""
+
+x = int( 1 )
+y = int( 2 )
+z = int( 3 )
+
+    # on peut aussi utiliser la fonction max et min comme ceci :
+print("20 : ", max(x, y, z) )
+
+"""
+Attention toutefois à ne pas mélanger entiers et floats d'une part avec une liste d'autre part, car cela renvoie une erreur.
+"""
+
+# Problème avec les copies de listes :
+
+"""
+J'attire votre attention sur un comportement de Python qui peut paraitre étrange lorsqu'on copie une liste :
+"""
+
+liste1 = [0, 1, 2, 3, 4]
+
+liste2 = liste1
+
+print("21 : ", liste2 )     # Va renvoyer la liste2 donc la liste1 car elles sont égales : [0, 1, 2, 3, 4]
+
+    # Mantenant ajoutons un élément à la liste2
+liste2.append( 5 )
+
+print("22 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
+
+"""
+Jusque ici, tout va bien
+
+Mais regardez ce qu'il se passe si j'affiche ce que vaut la lste1
+"""
+
+print("23 : ", liste1 )
+
+"""
+Va renvoyer : [0, 1, 2, 3, 4, 5]
+
+Alors qu'on a jamais ajouté 5 a la liste1
+
+Voici le problème :
+    liste2 = liste1
+cette operation met en relation les deux listes, tout ce qui arrive à l'une arrive aussi à l'autre
+
+pour eviter cela, on utilise la fonction .copy()
+"""
+
+liste1 = [0, 1, 2, 3, 4]
+
+liste2 = liste1.copy()      # On dis que la liste2 deviens une liste à part entière qui possède les mêmes elements que la liste1
+
+print("24 : ", liste2 )     # Va renvoyer la liste2 : [0, 1, 2, 3, 4]
+
+    # Mantenant ajoutons un élément à la liste2
+liste2.append( 5 )
+
+print("25 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
+
+print("26 : ", liste1 )     # Va renvoyer : [0, 1, 2, 3, 4]
