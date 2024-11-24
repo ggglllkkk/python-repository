@@ -65,7 +65,7 @@ else:                       # Mais uniquement un seul else
     print("6  : ", "x est different de 2 et 3")
 
 """
-ATTENTION :
+⚠⚠ ATTENTION :
 
 if :
     ...
@@ -148,6 +148,6 @@ C'est plus efficace et cela consomme moins de mémoire.
 
 Sinon on peut utiliser une liste ;)
 jour = int(3)
-listeJours=["Lundi, "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
-print(listeJours[jour])
+listeJours = ["Lundi, "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+print( listeJours[jour] )
 """
