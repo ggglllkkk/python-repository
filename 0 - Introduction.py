@@ -11,7 +11,7 @@
 # Dans les chapitres suivants j'utiliserais la fonction print()
 
 """
-La finction print permet d'afficher des elements dans la console.
+La fonction print permet d'afficher des elements dans la console.
 
 ils seront de la forme : 
 print("1-" + str( variableInterresante )
