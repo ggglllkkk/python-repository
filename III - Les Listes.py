@@ -152,7 +152,7 @@ listeDeNombres = [0, 1, 2, 3, 4, 5]
                             # Va retourner 6
 print("14 : ", len(listeDeNombres) )
 
-# Les Listes de listes :
+# Les listes de listes :
 
 """
 Sachez qu'il est tout à fait possible de construire des listes de listes. Cette fonctionnalité peut parfois être très pratique.
