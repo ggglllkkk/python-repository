@@ -23,5 +23,12 @@ c'est pour vous aider a mieux vous reperer dans la console mais ne pretez pas at
 """
 Pour mieux travailler, vous pouvez telecharger les fichiers et les executer sur votre ordinateur
 
-pour cela il faut aller dans : Code -> "Cliquez sur le fichier qui vous interresse" -> "En haut à côté du mot : "Raw" vous avez un bouton "télécharger" "
+pour cela il faut aller dans :
+    Solution 1 :
+        Code -> "Cliquez sur le fichier qui vous interresse" -> "Cliquer sur les "..." en haut à droite " -> télécharger
+    Solution 2 :
+        Code -> "Cliquez sur le fichier qui vous interresse" -> "Cliquer sur les "..." en haut à droite " -> télécharger
+    Solution 3 :
+        Code -> "Cliquez sur le fichier qui vous interresse" -> "En haut à côté du mot : "Raw" vous avez un bouton "télécharger" "
+        
 """
