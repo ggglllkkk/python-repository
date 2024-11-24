@@ -151,3 +151,21 @@ listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va retourner 6
 print("14 : ", len(listeDeNombres) )
+
+# Les Listes de listes :
+
+"""
+Sachez qu'il est tout à fait possible de construire des listes de listes. Cette fonctionnalité peut parfois être très pratique.
+"""
+
+prairie1 = ["girafe", 4]
+prairie2 = ["tigre", 2]
+prairie3 = ["singe", 5]
+savane = [prairie1, prairie2, prairie3]
+             
+print("14 : ", savane)      # Va retourner [['girafe', 4], ['tigre', 2], ['singe', 5]]
+
+print("15 : ", savane[0])   # Va retourner ['girafe', 4]
+
+                            # Va retourner 'girafe'
+print("16 : ", savane[0][0])
