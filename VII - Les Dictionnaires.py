@@ -1,4 +1,62 @@
 ############################################
+############# les Boucles While ############
+############################################
+
+"""
+Une alternative à l'instruction for couramment utilisée en informatique est la boucle while. 
+Avec ce type de boucle, 
+    une série d'instructions est exécutée tant qu'une condition est vraie. 
+"""
+
+# Par exemple :
+
+i = 1
+while i <= 4:
+    print("1  : ", i)
+    i = i + 1
+
+"""
+Remarquez qu'il est encore une fois nécessaire d'indenter le bloc d'instructions correspondant au corps de la boucle (ici, les instructions lignes 3 et 4).
+
+Une boucle while nécessite généralement trois éléments pour fonctionner correctement :
+
+>>> Initialisation de la variable d'itération avant la boucle (ligne 1).
+
+>>> Test de la variable d'itération associée à l'instruction while (ligne 2).
+
+>>> Mise à jour de la variable d'itération dans le corps de la boucle (ligne 4).
+
+Faites bien attention aux tests et à l'incrémentation que vous utilisez, 
+    car une erreur mène souvent à des « boucles infinies » qui ne s'arrêtent jamais. 
+Vous pouvez néanmoins toujours stopper l'exécution d'un script Python à l'aide de la combinaison de touches Ctrl-C
+    (c'est-à-dire en pressant simultanément les touches Ctrl et C).
+"""
+
+# La fonction input() :
+
+"""
+La fonction input() en Python permet de lire une entrée utilisateur depuis l'entrée standard (généralement le clavier).
+
+Elle prend en argument un message (sous la forme d'une chaîne de caractères), 
+    demande à l'utilisateur d'entrer une valeur et renvoie celle-ci sous forme d'une chaîne de caractères, 
+    qu'il faut ensuite convertir si besoin.
+"""
+
+entreeUtilisateur = input("saisir une lettre : ")
+
+print("2  : ", entreeUtilisateur )
+
+"""
+La boucle while combinée à la fonction input() peut s'avérer commode lorsqu'on souhaite demander à l'utilisateur une valeur numérique. 
+"""
+
+i = 0
+while i < 10:
+                            # Ici, le programme ne s'arretera pas tant que l'utilisateur n'aura pas saisi une valeur superieur a 10
+    reponse = input("Entrez un entier supérieur à 10 : ")
+    i = int(reponse)
+
+############################################
 ############# les Dictionnaires ############
 ############################################
 
@@ -119,3 +177,96 @@ taille
 """
 
 # La méthode .items() :
+
+"""
+La méthode .items() renvoie un nouvel objet dict_items :
+
+dico = {0: "t", 1: "o", 2: "t", 3: "o"}
+dico.items()
+
+Renvoi :
+
+dict_items([(0, 't'), (1, 'o'), (2, 't'), (3, 'o')])
+
+On ne peut pas retrouver un élément par son indice dans un objet dict_items, toutefois on peut itérer dessus :
+
+for key, val in dico.items():
+    print(key, val)
+
+Retourne :
+
+0 t
+1 o
+2 t
+3 o
+
+Notez la syntaxe particulière qui ressemble à la fonction enumerate() vue au chapitre 5 Boucles et comparaisons. 
+On itère à la fois sur key et sur val. 
+Nous aurons l'explication de ce mécanisme dans la rubrique sur les tuples ci-après.
+"""
+
+# Existence d'une clé ou d'une valeur :
+
+"""
+Pour vérifier si une clé existe dans un dictionnaire, 
+    on peut utiliser le test d'appartenance avec l'opérateur in qui renvoie un booléen :
+"""
+
+animal = {'nom': 'singe', 'poids': 70, 'taille': 1.75}
+                            # Renvoie True, car "poids" est bien une clé dans le dictionnaire
+print("11 : ", "poids" in animal)
+
+"""
+Si on souhaite tester si une valeur existe dans un dictionnaire,
+    on peut utiliser l'opérateur in avec l'objet renvoyé par la méthode .values() :
+"""
+
+animal = {'nom': 'singe', 'poids': 70, 'taille': 1.75}
+                            # Renvoie True, car "singe" est bien une valeur dans le dictionnaire
+print("12 : ", "singe" in animal.values())
+
+# La méthode .get() : 
+
+"""
+Par défaut, si on demande la valeur associée à une clé qui n'existe pas, Python renvoie une erreur :
+
+animal2 = {'nom': 'singe', 'poids': 70, 'taille': 1.75}
+print(animal2["age"])
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'age'
+
+La méthode .get() s'affranchit de ce problème. 
+Elle extrait la valeur associée à une clé mais ne renvoie pas d'erreur si la clé n'existe pas :
+"""
+
+print("13 : ", animal.get("age"))
+
+"""
+On peut également indiquer à .get() une valeur par défaut si la clé n'existe pas :
+"""
+
+print("14 : ", animal.get("age", 42))
+
+# Les liste de dictionnaires :
+
+"""
+En créant une liste de dictionnaires qui possèdent les mêmes clés, on obtient une structure qui ressemble à une base de données :
+"""
+
+animal1 = {'nom': 'girafe', 'taille': 5.0, 'poids': 1100}
+animal2 = {'nom': 'singe', 'taille': 1.75, 'poids': 70 }
+
+animaux = [animal1, animal2]
+
+    # Retourne : [{'nom': 'girafe', 'poids': 1100, 'taille': 5.0}, {'nom': 'singe','poids': 70, 'taille': 1.75}]
+print("15 : ", animaux)
+
+for animal in animaux:
+                            # Retourne : girafe singe
+    print("15 : ", animal["nom"])
+
+"""
+Vous constatez ainsi que les dictionnaires permettent de gérer des structures complexes de manière plus explicite que les listes.
+"""
