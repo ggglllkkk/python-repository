@@ -27,7 +27,7 @@ pour cela il faut aller dans :
     Solution 1 :
         Code -> "Cliquez sur le fichier qui vous interresse" -> "Cliquer sur les "..." en haut à droite " -> télécharger
     Solution 2 :
-        Code -> "Cliquez sur le fichier qui vous interresse" -> "Cliquer sur les "..." en haut à droite " -> télécharger
+        Code -> "Cliquez sur le fichier qui vous interresse" -> racourci clavier : [ctrl] [shift] [s]
     Solution 3 :
         Code -> "Cliquez sur le fichier qui vous interresse" -> "En haut à côté du mot : "Raw" vous avez un bouton "télécharger" "
         
