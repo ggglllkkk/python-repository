@@ -23,5 +23,5 @@ c'est pour vous aider a mieux vous reperer dans la console mais ne pretez pas at
 """
 Pour mieux travailler, vous pouvez telecharger les fichiers et les executer sur votre ordinateur
 
-pour cela il faut aller dans : Code -> Télécharger
+pour cela il faut aller dans : Code -> "Cliquez sur le fichier qui vous interresse" -> "En haut à côté du mot : "Raw" vous avez un bouton "télécharger" "
 """
