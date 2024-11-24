@@ -10,11 +10,11 @@ pour definir une liste il y a plusieurs moyen :
 
 # definition directe :
 
-liste = []                  # defini une liste vide, sans elements de longueur 0
+liste = []                  # definit une liste vide, sans elements de longueur 0
 
-liste = [1, 2, 3, 4, 5]     # defini une liste de Ints de longueur 5, elle contien : 1, 2, 3 ... 5
+liste = [1, 2, 3, 4, 5]     # definit une liste de Ints de longueur 5, elle contien : 1, 2, 3 ... 5
 
-                            # defini une liste de Strings de longueur 5, elle contien :  "1", "a" ... "True"
+                            # definit une liste de Strings de longueur 5, elle contien :  "1", "a" ... "True"
 liste = ["1", "a", "Mattéo", "Python", "True"]   
 
                             # Une liste peut contenir plusieurs types d'objets differents :
@@ -32,9 +32,9 @@ print("1  : ", liste)       # va retourner : ['a', 'b', 'c', 'd', 'e', 'f'], moi
 Un des gros avantages d'une liste est que vous accédez à ses éléments par leur position. Ce numéro est appelé indice (ou index) de la liste.
 
 liste  : ["girafe", "tigre", "singe", "souris"]
-indice :        0        1        2         
+indice :     0         1        2         3
 
-Soyez très attentif au fait que les indices d'une liste de n éléments commencent à 
+!!!!!! SOYEZ TRES ATTENTIFS au fait que les indices d'une liste de n éléments commencent à 
 0 et se terminent à n-1 .
 """
 
@@ -60,15 +60,24 @@ liste1 * 3                  # Retourne : ['girafe', 'tigre', 'girafe', 'tigre', 
 
 liste = []                  # Une liste vide
 
-liste1 = liste + [15]       # Ou liste += [15] 
+liste1 = liste + [15]       # Ou liste += [15] (concatenation)
 print("3  : ", liste)       # retournera : [15] 
 liste = liste + [-5]        # Ou liste += [-5] 
 print("4  : ", liste)       #retournera : [15, -5]
+liste= ["debut"] + liste    # On ajout "debut" au debut de la liste
+print("4.3 : ", liste)
 
-    # Puis avec la méthode .append() :
+    # Puis avec la méthode .append() :  (methode meilleure d'un point de vue structure de données)
 
 liste = []
-liste.append(15)            # retournera : [15] 
+liste.append(15)            # retournera : [15]   (ajoute l'element passé en argument A LA FIN de la liste)
+print("4.7 :", liste)
+
+    # La méthode .insert()
+
+liste=[0,1,2]
+liste.insert(1, "coucou")  # insere a l'indice passé en PREMIER argument l'element passé en SECOND argument (et décale les éléments suivants)
+print("4 jaiplusdinspipourlesnumeros : ", liste)
 
 """
 Indiçage négatif :
@@ -98,12 +107,12 @@ Un autre avantage des listes,
         
         tranche = nomDeLaListe[ m : n+1 ]
 
-        ici, on a récupéré tous les éléments du émième au énième (de l'élément m inclu à l'élément n+1 exclu) grace au ":"
+        ici, on a récupéré tous les éléments du m-ième au n-ième (de l'élément m inclu à l'élément n+1 exclu) grace au ":"
     
     On dit alors qu'on récupère une tranche de la liste.
 """
 
-                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+                            # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0ème au 2ème exclu donc [0, 1]
@@ -125,7 +134,7 @@ print("9  : ", listeDeNombres[1:-1])
 On peut aussi préciser le pas en ajoutant un symbole deux-points supplémentaire et en indiquant le pas par un entier
 """
 
-                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+                            # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0ème au 3ème exclu de 2 en 2 donc [0, 2]
@@ -146,7 +155,7 @@ print("13 : ", listeDeNombres[1:6:3])
 L'instruction len() vous permet de connaître la longueur d'une liste, c'est-à-dire le nombre d'éléments que contient la liste.
 """
 
-                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+                            # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va retourner 6
@@ -176,7 +185,7 @@ print("16 : ", savane[0][0])
 Les fonctions min(), max() et sum() renvoient respectivement le minimum, le maximum et la somme d'une liste passée en argument :
 """
 
-                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+                            # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va renvoyer la somme des termes de la liste : 1 + 2 + 3 + 4 + 5 = 15
@@ -207,6 +216,7 @@ Attention toutefois à ne pas mélanger entiers et floats d'une part avec une li
 # Problème avec les copies de listes :
 
 """
+!!!!!!!! TRES IMPORTANT
 J'attire votre attention sur un comportement de Python qui peut paraitre étrange lorsqu'on copie une liste :
 """
 
