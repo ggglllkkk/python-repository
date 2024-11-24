@@ -1,1 +1,141 @@
+############################################
+################ les Ints ##################
+############################################
 
+a = 2                       # peut être n'importe quel entier relatif
+print(type(a))
+
+# il est possible de convertir des objets en Int
+
+b = "2"                     # un string
+b = int(b)                  # la fonction int() : Convertit un nombre ou une chaîne de caractères en un entier, ou retourne 0 si aucun argument n'est fourni.
+print(type(b))
+
+b = 3.6                     # un relatif
+b = int(b)                  # va arrondir a l'entier inferieur : 3.4 donnera 3 tout comme 3.9999...
+print(b)            
+
+c = True                    # un boolean
+c = int(c)
+print(c)              # 1 correspond a True et 0 à False
+
+
+############################################
+################ les String ################
+############################################
+
+a = "2"                     # peut être n'importe quel entier relatif
+print(type(a))
+
+# il est possible de convertir des objets en Str
+
+b = 2                       # un string
+b = str(b)                  # la fonction str() : Crée un nouvel objet de type chaîne à partir de l'objet donné.
+print(type(b))
+
+c = True                    # un boolean
+c = str(c)
+print(c)              # va transformer True en "True" et False en "False"
+
+
+############################################
+############### les Booleans ###############
+############################################
+
+a = True                    # peut prendre 2 valeurs possibles : True / False
+print(type(a))
+
+# il est possible de convertir des objets en Bool
+
+b = 0                       # un entier
+b = bool(b)                 # la fonction bool(x) : Renvoie True lorsque l'argument x est vrai, False sinon.
+print(b)                    # va renvoyer False, car 0 est faux, en revanche tout autre entier, relatif ou str retournera True
+
+print( bool("a") )
+
+# un bool peut aussi prendre comme valeur une condition :
+
+x = int( 3 )
+isPositive = (x > 0)        # ici, la variable isPositive prendra la valeur True si X positif sinon false
+print(isPositive)
+
+"""
+voici les comparateurs possibles : 
+
+a == b                      # lire a egale b
+a != b                      # lire a different de b
+a > b                       # lire a strictement superieur à b
+a < b                       # lire a strictement inferieur à b
+a >= b                      # lire a superieur ou egal à b
+a <= b                      # lire a inferieur ou egal à b
+
+"""
+
+
+# le mot clé "not"
+
+a = bool( True )
+a = not a
+print(a)                    # va retourner False si a = True et inversement
+
+
+# les mots clés "and" et "or"
+
+x = int( 3 )
+isPositive = (x > 0) 
+
+isGreaterThan5 = x > 5      # comme vous le voyer les parenthèses ne sont pas obligatoire mais ajoute de la lisibilité
+
+                            # ici, isPositiveAndGreaterThan5 prendra la valuer True si les deux conditions sont vraies
+                            # sinon si au moins une, ou les deux sont fausses alors cela renverra False
+isPositiveAndGreaterThan5 = isPositive and isGreaterThan5
+print(isPositiveAndGreaterThan5)
+
+                            # ici, isPositiveAndGreaterThan5 prendra la valuer True si au moins une condition est vraie ou les deux,
+                            # sinon les deux sont fausses alors cela renverra False
+isPositiveOrGreaterThan5 = isPositive or isGreaterThan5
+print(isPositiveOrGreaterThan5)
+
+
+############################################
+################ les Floats ################
+############################################
+
+a = 2.0                      # peut être n'importe quel entier relatif ou rationnel tant qu'il s'ecris avec un point, meme s'il n'y a que des 0 derriere.
+print(type(a))
+
+# il est possible de convertir des objets en Float
+
+b = "2"                     # un string
+b = float(b)                # la fonction float() : Convertit une chaîne ou un nombre en un nombre à virgule flottante, si possible.
+print(b)                    # renvoi 2.0
+
+b = 3                       # un Int
+b = float(b)        
+print(b)                    # retourne 3.0            
+
+c = False                   # un boolean
+c = float(c)
+print(c)                    # retourne 1.0 pour True et 0.0 pour Flase
+
+d = 3.0000000000            # c'est un Float avec 10 chiffre après la virgule, il ne sera pourtant enregistré qu'en tant que : d = 3.0
+print(d)
+
+e = 3.0000000001            # ici, c'est un Float avec neufs 0 après la virgule et un 1 , il sera enregistré en tant que tel : e = 3.0000000001  
+print(e)
+
+f = 3.1415926535            # voici les 10 premières decimales de pi.
+f = round(f)                # la fonction round : 
+"""
+Arrondit un nombre à une précision donnée en chiffres décimaux.
+
+La valeur de retour est un entier si la precision est omise ou défini sur None. 
+Sinon, la valeur de retour a le même type que le nombre. la precision peut être négative.
+"""
+
+print(f)                    # va retourner un Int : 3
+
+f = 3.1415926535            # voici les 10 premières decimales de pi.
+precision = int( 2 )        # ceci est la pecision, c'est a dire le nombre de decimales que l'on souhaite conserver, ici 2
+f = round(f, precision)     # la fonction round va donc retourner 3.14
+print(f)
