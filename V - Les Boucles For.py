@@ -2,8 +2,6 @@
 ############# les Boucles For ##############
 ############################################
 
-# Les boucles for :
-
 """
 En programmation, on est souvent amené à répéter plusieurs fois une instruction. 
 Incontournables à tout langage de programmation, 
