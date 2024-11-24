@@ -17,7 +17,7 @@ print("3  : ", b)
 
 c = True                    # un boolean
 c = int(c)
-print("4  : ", c)              # 1 correspond a True et 0 à False
+print("4  : ", c)           # 1 correspond a True et 0 à False
 
 
 ############################################
@@ -35,7 +35,7 @@ print("6  : ", type(b))
 
 c = True                    # un boolean
 c = str(c)
-print("7  : ", c)              # va transformer True en "True" et False en "False"
+print("7  : ", c)           # va transformer True en "True" et False en "False"
 
 
 ############################################
@@ -49,7 +49,7 @@ print("8  : ", type(a))
 
 b = 0                       # un entier
 b = bool(b)                 # la fonction bool(x) : Renvoie True lorsque l'argument x est vrai, False sinon.
-print("9  : ", b)                    # va renvoyer False, car 0 est faux, en revanche tout autre entier, relatif ou str retournera True
+print("9  : ", b)           # va renvoyer False, car 0 est faux, en revanche tout autre entier, relatif ou str retournera True
 
 # un bool peut aussi prendre comme valeur une condition :
 
@@ -74,7 +74,7 @@ a <= b                      # lire a inferieur ou egal à b
 
 a = bool( True )
 a = not a
-print("11 : ", a)                    # va retourner False si a = True et inversement
+print("11 : ", a)           # va retourner False si a = True et inversement
 
 
 # les mots clés "and" et "or"
@@ -99,22 +99,22 @@ print("13 : ", isPositiveOrGreaterThan5)
 ################ les Floats ################
 ############################################
 
-a = 2.0                      # peut être n'importe quel entier relatif ou rationnel tant qu'il s'ecris avec un point, meme s'il n'y a que des 0 derriere.
+a = 2.0                     # peut être n'importe quel entier relatif ou rationnel tant qu'il s'ecris avec un point, meme s'il n'y a que des 0 derriere.
 print("14 : ", type(a))
 
 # il est possible de convertir des objets en Float
 
 b = "2"                     # un string
 b = float(b)                # la fonction float() : Convertit une chaîne ou un nombre en un nombre à virgule flottante, si possible.
-print("15 : ", b)                    # renvoi 2.0
+print("15 : ", b)           # renvoi 2.0
 
 b = 3                       # un Int
 b = float(b)        
-print("16 : ", b)                    # retourne 3.0            
+print("16 : ", b)           # retourne 3.0            
 
 c = False                   # un boolean
 c = float(c)
-print("17 : ", c)                    # retourne 1.0 pour True et 0.0 pour Flase
+print("17 : ", c)           # retourne 1.0 pour True et 0.0 pour Flase
 
 d = 3.0000000000            # c'est un Float avec 10 chiffre après la virgule, il ne sera pourtant enregistré qu'en tant que : d = 3.0
 print("18 : ", d)
@@ -131,7 +131,7 @@ La valeur de retour est un entier si la precision est omise ou défini sur None.
 Sinon, la valeur de retour a le même type que le nombre. la precision peut être négative.
 """
 
-print("20 : ", f)                    # va retourner un Int : 3
+print("20 : ", f)           # va retourner un Int : 3
 
 f = 3.1415926535            # voici les 10 premières decimales de pi.
 precision = int( 2 )        # ceci est la pecision, c'est a dire le nombre de decimales que l'on souhaite conserver, ici 2
