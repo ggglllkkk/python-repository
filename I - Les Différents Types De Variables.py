@@ -3,21 +3,21 @@
 ############################################
 
 a = 2                       # peut être n'importe quel entier relatif
-print("1 : ", type(a))
+print("1  : ", type(a))
 
 # il est possible de convertir des objets en Int
 
 b = "2"                     # un string
 b = int(b)                  # la fonction int() : Convertit un nombre ou une chaîne de caractères en un entier, ou retourne 0 si aucun argument n'est fourni.
-print("2 : ", type(b))
+print("2  : ", type(b))
 
 b = 3.6                     # un relatif
 b = int(b)                  # va arrondir a l'entier inferieur : 3.4 donnera 3 tout comme 3.9999...
-print("3 : ", b)            
+print("3  : ", b)            
 
 c = True                    # un boolean
 c = int(c)
-print("4 : ", c)              # 1 correspond a True et 0 à False
+print("4  : ", c)              # 1 correspond a True et 0 à False
 
 
 ############################################
@@ -25,17 +25,17 @@ print("4 : ", c)              # 1 correspond a True et 0 à False
 ############################################
 
 a = "2"                     # peut être n'importe quel entier relatif
-print("5 : ", type(a))
+print("5  : ", type(a))
 
 # il est possible de convertir des objets en Str
 
 b = 2                       # un string
 b = str(b)                  # la fonction str() : Crée un nouvel objet de type chaîne à partir de l'objet donné.
-print("6 : ", type(b))
+print("6  : ", type(b))
 
 c = True                    # un boolean
 c = str(c)
-print("7 : ", c)              # va transformer True en "True" et False en "False"
+print("7  : ", c)              # va transformer True en "True" et False en "False"
 
 
 ############################################
@@ -43,13 +43,13 @@ print("7 : ", c)              # va transformer True en "True" et False en "False
 ############################################
 
 a = True                    # peut prendre 2 valeurs possibles : True / False
-print("8 : ", type(a))
+print("8  : ", type(a))
 
 # il est possible de convertir des objets en Bool
 
 b = 0                       # un entier
 b = bool(b)                 # la fonction bool(x) : Renvoie True lorsque l'argument x est vrai, False sinon.
-print("9 : ", b)                    # va renvoyer False, car 0 est faux, en revanche tout autre entier, relatif ou str retournera True
+print("9  : ", b)                    # va renvoyer False, car 0 est faux, en revanche tout autre entier, relatif ou str retournera True
 
 # un bool peut aussi prendre comme valeur une condition :
 
