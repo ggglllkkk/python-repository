@@ -2,7 +2,7 @@
 ############# les Opperations ##############
 ############################################
 
-# voici tout les opperateurs : + * - / // % **
+# voici tout les operateurs : + * - / // % **
 
 # L'addition : 
 
@@ -29,7 +29,7 @@ a += 3
 a = str( "a") 
 b = str( "2" )
 resultat = a + b 
-print("3  : ", resultat)    # egale à "a2" un Str
+print("3  : ", resultat)    # egale à "a2" un Str  (additionner deux str s'appelle "concatener")
 
 a = str( "1") 
 b = str( "2" )
@@ -118,7 +118,7 @@ a /= 3
 
 # La division entière : //
 
-# le mot clé // permet d'obtenir le resultat de la division eclidienne sans le reste
+# le mot clé // permet d'obtenir le resultat de la division euclidienne sans le reste (donc le quotient :|)
 
 a = int( 5 ) 
 b = int( 2 )
