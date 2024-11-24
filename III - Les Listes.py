@@ -34,7 +34,7 @@ Un des gros avantages d'une liste est que vous accédez à ses éléments par le
 liste  : ["girafe", "tigre", "singe", "souris"]
 indice :     0         1        2         3
 
-!!!!!! SOYEZ TRES ATTENTIFS au fait que les indices d'une liste de n éléments commencent à 
+⚠⚠ SOYEZ TRES ATTENTIFS au fait que les indices d'une liste de n éléments commencent à 
 0 et se terminent à n-1 .
 """
 
@@ -65,19 +65,19 @@ print("3  : ", liste)       # retournera : [15]
 liste = liste + [-5]        # Ou liste += [-5] 
 print("4  : ", liste)       #retournera : [15, -5]
 liste= ["debut"] + liste    # On ajout "debut" au debut de la liste
-print("4.3 : ", liste)
+print("5 : ", liste)
 
     # Puis avec la méthode .append() :  (methode meilleure d'un point de vue structure de données)
 
 liste = []
 liste.append(15)            # retournera : [15]   (ajoute l'element passé en argument A LA FIN de la liste)
-print("4.7 :", liste)
+print("6 :", liste)
 
     # La méthode .insert()
 
 liste=[0,1,2]
 liste.insert(1, "coucou")  # insere a l'indice passé en PREMIER argument l'element passé en SECOND argument (et décale les éléments suivants)
-print("4 jaiplusdinspipourlesnumeros : ", liste)
+print("7 : ", liste)
 
 """
 Indiçage négatif :
@@ -115,20 +115,20 @@ Un autre avantage des listes,
                             # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
-                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0ème au 2ème exclu donc [0, 1]
-print("5  : ", listeDeNombres[0:2])  
+                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0-ème au 2-ème exclu donc [0, 1]
+print("8  : ", listeDeNombres[0:2])  
 
-                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0ème au 3ème exclu donc [0, 1, 2]
-print("6  : ", listeDeNombres[0:3])  
+                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0-ème au 3-ème exclu donc [0, 1, 2]
+print("9  : ", listeDeNombres[0:3])  
 
-                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 3ème jusqu'à la fin de la liste donc [3, 4, 5]
-print("7  : ", listeDeNombres[3:]) 
+                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 3-ème jusqu'à la fin de la liste donc [3, 4, 5]
+print("10  : ", listeDeNombres[3:]) 
 
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du début jusqu'à la fin de la liste donc [0, 1, 2, 3, 4, 5]
-print("8  : ", listeDeNombres[:]) 
+print("11  : ", listeDeNombres[:]) 
 
                             # Va retourner une nouvelle liste contenant des elements de listeDeNombres : [1, 2, 3, 4]
-print("9  : ", listeDeNombres[1:-1]) 
+print("12  : ", listeDeNombres[1:-1]) 
 
 """
 On peut aussi préciser le pas en ajoutant un symbole deux-points supplémentaire et en indiquant le pas par un entier
@@ -137,17 +137,17 @@ On peut aussi préciser le pas en ajoutant un symbole deux-points supplémentair
                             # definitune liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
-                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0ème au 3ème exclu de 2 en 2 donc [0, 2]
-print("10 : ", listeDeNombres[0:3:2]) 
+                            # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 0-ème au 3-ème exclu de 2 en 2 donc [0, 2]
+print("13 : ", listeDeNombres[0:3:2]) 
 
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du début jusqu'à la fin de la liste de 1 en 1 donc [0, 1, 2, 3, 4, 5]
-print("11 : ", listeDeNombres[::1]) 
+print("14 : ", listeDeNombres[::1]) 
 
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du début jusqu'à la fin de la liste de 2 en 2 donc [0, 2, 4,]
-print("12 : ", listeDeNombres[::2]) 
+print("15 : ", listeDeNombres[::2]) 
 
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 1er au 6ème exclu de 3 en 3 donc [1, 4]
-print("13 : ", listeDeNombres[1:6:3]) 
+print("16 : ", listeDeNombres[1:6:3]) 
 
 # La Fonction len() :
 
@@ -159,7 +159,7 @@ L'instruction len() vous permet de connaître la longueur d'une liste, c'est-à-
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va retourner 6
-print("14 : ", len(listeDeNombres) )
+print("17 : ", len(listeDeNombres) )
 
 # Les listes de listes :
 
@@ -172,12 +172,12 @@ prairie2 = ["tigre", 2]
 prairie3 = ["singe", 5]
 savane = [prairie1, prairie2, prairie3]
              
-print("14 : ", savane)      # Va retourner [['girafe', 4], ['tigre', 2], ['singe', 5]]
+print("18 : ", savane)      # Va retourner [['girafe', 4], ['tigre', 2], ['singe', 5]]
 
-print("15 : ", savane[0])   # Va retourner ['girafe', 4]
+print("19 : ", savane[0])   # Va retourner ['girafe', 4]
 
                             # Va retourner 'girafe'
-print("16 : ", savane[0][0])
+print("20 : ", savane[0][0])
 
 # Le minimum, maximum et somme d'une liste :
 
@@ -189,13 +189,13 @@ Les fonctions min(), max() et sum() renvoient respectivement le minimum, le maxi
 listeDeNombres = [0, 1, 2, 3, 4, 5]
 
                             # Va renvoyer la somme des termes de la liste : 1 + 2 + 3 + 4 + 5 = 15
-print("17 : ", sum(listeDeNombres) )
+print("21 : ", sum(listeDeNombres) )
 
                             # Va renvoyer le plus petit élément de la liste : 0
-print("18 : ", min(listeDeNombres) )
+print("22 : ", min(listeDeNombres) )
 
                             # Va renvoyer le plus grand élément de la liste : 5
-print("19 : ", max(listeDeNombres) )
+print("23 : ", max(listeDeNombres) )
 
 """
 Même si en théorie ces fonctions peuvent prendre en argument une liste de strings, 
@@ -207,16 +207,16 @@ y = int( 2 )
 z = int( 3 )
 
     # on peut aussi utiliser la fonction max et min comme ceci :
-print("20 : ", max(x, y, z) )
+print("24 : ", max(x, y, z) )
 
 """
-Attention toutefois à ne pas mélanger entiers et floats d'une part avec une liste d'autre part, car cela renvoie une erreur.
+⚠ Attention toutefois à ne pas mélanger entiers et floats d'une part avec une liste d'autre part, car cela renvoie une erreur.
 """
 
 # Problème avec les copies de listes :
 
 """
-!!!!!!!! TRES IMPORTANT
+⚠⚠⚠ TRES IMPORTANT
 J'attire votre attention sur un comportement de Python qui peut paraitre étrange lorsqu'on copie une liste :
 """
 
@@ -224,12 +224,12 @@ liste1 = [0, 1, 2, 3, 4]
 
 liste2 = liste1
 
-print("21 : ", liste2 )     # Va renvoyer la liste2 donc la liste1 car elles sont égales : [0, 1, 2, 3, 4]
+print("25 : ", liste2 )     # Va renvoyer la liste2 donc la liste1 car elles sont égales : [0, 1, 2, 3, 4]
 
     # Mantenant ajoutons un élément à la liste2
 liste2.append( 5 )
 
-print("22 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
+print("26 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
 
 """
 Jusque ici, tout va bien
@@ -237,7 +237,7 @@ Jusque ici, tout va bien
 Mais regardez ce qu'il se passe si j'affiche ce que vaut la lste1
 """
 
-print("23 : ", liste1 )
+print("27 : ", liste1 )
 
 """
 Va renvoyer : [0, 1, 2, 3, 4, 5]
@@ -255,11 +255,11 @@ liste1 = [0, 1, 2, 3, 4]
 
 liste2 = liste1.copy()      # On dis que la liste2 deviens une liste à part entière qui possède les mêmes elements que la liste1
 
-print("24 : ", liste2 )     # Va renvoyer la liste2 : [0, 1, 2, 3, 4]
+print("28 : ", liste2 )     # Va renvoyer la liste2 : [0, 1, 2, 3, 4]
 
     # Mantenant ajoutons un élément à la liste2
 liste2.append( 5 )
 
-print("25 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
+print("29 : ", liste2 )     # Va renvoyer : [0, 1, 2, 3, 4, 5]
 
-print("26 : ", liste1 )     # Va renvoyer : [0, 1, 2, 3, 4]
+print("30 : ", liste1 )     # Va renvoyer : [0, 1, 2, 3, 4]
