@@ -139,3 +139,15 @@ print("12 : ", listeDeNombres[::2])
 
     # Va retourner une nouvelle liste contenant des elements de listeDeNombres du 1er au 6ème exclu de 3 en 3 donc [1, 4]
 print("13 : ", listeDeNombres[1:6:3]) 
+
+# La Fonction len()
+
+"""
+L'instruction len() vous permet de connaître la longueur d'une liste, c'est-à-dire le nombre d'éléments que contient la liste.
+"""
+
+                            # Defini une liste de Ints de longueur 6, elle contien : 1, 2, 3 ... 5
+listeDeNombres = [0, 1, 2, 3, 4, 5]
+
+                            # Va retourner 6
+print("14 : ", len(listeDeNombres) )
