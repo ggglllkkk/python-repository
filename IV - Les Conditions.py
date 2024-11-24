@@ -92,3 +92,55 @@ Dans le deuxième cas, toutes les conditions peuvent être testées mais pas for
     c'est à dire que si la première condition est verifiée et que le code associé est éxécuté,
     le script va sauter toutes les autres conditions et va poursuivre l'éxécution du script.
 """
+
+
+
+"""
+Astuce pour ceux qui veulent aller plus loin : 
+
+Dans le cas ou vous avez une suite de elif qui teste la valeur d'une même variable, comme par exemple :
+
+jour = int( 3 )
+
+if jour == 1:
+    print( 'Lundi' )
+elif jour == 2:
+    print( 'Mardi' )
+elif jour == 3:
+    print( 'Mercredi' )
+elif jour == 4:
+    print( 'Jeudi' )
+elif jour == 5:
+    print( 'Vendredi' )
+elif jour == 6:
+    print( 'Samedi' )
+elif jour == 7:
+    print( 'Dimanche' )
+else:
+    return 'Pas un jour de la semaine'
+
+On peut utiliser les mots clés match et case :
+
+jour = int( 3 )
+
+match jour:
+    case 1:
+        return 'Lundi'
+    case 2:
+        return 'Mardi'
+    case 3:
+        return 'Mercredi'
+    case 4:
+        return 'Jeudi'
+    case 5:
+        return 'Vendredi'
+    case 6:
+        return 'Samedi'
+    case 7:
+        return 'Dimanche'
+    case _:
+        return 'Pas un jour de la semaine'
+
+C'est plus efficace et cela consomme moins de mémoire.
+
+"""
