@@ -59,6 +59,7 @@ La création d'un nouveau tuple à chaque étape s'avère lourde
 Pour ce genre de tâche, les listes sont clairement mieux adaptées.
 
 Remarque :
+!!!!!!!!!!!!
 Pour créer un tuple d'un seul élément comme ci-dessus, 
     utilisez une syntaxe avec une virgule (element,), 
     pour éviter une ambiguïté avec une simple expression. 
