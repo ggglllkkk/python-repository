@@ -26,6 +26,8 @@ Une boucle while nécessite généralement trois éléments pour fonctionner cor
 
 >>> Mise à jour de la variable d'itération dans le corps de la boucle (ligne 4).
 
+!! A noter qu'il n'est pas obligatoire d'avoir un aspect itératoire à la boucle, il faut juste que le code en son sein lui permette de s'arrêter
+
 Faites bien attention aux tests et à l'incrémentation que vous utilisez, 
     car une erreur mène souvent à des « boucles infinies » qui ne s'arrêtent jamais. 
 Vous pouvez néanmoins toujours stopper l'exécution d'un script Python à l'aide de la combinaison de touches Ctrl-C
@@ -37,8 +39,8 @@ Vous pouvez néanmoins toujours stopper l'exécution d'un script Python à l'aid
 """
 La fonction input() en Python permet de lire une entrée utilisateur depuis l'entrée standard (généralement le clavier).
 
-Elle prend en argument un message (sous la forme d'une chaîne de caractères), 
-    demande à l'utilisateur d'entrer une valeur et renvoie celle-ci sous forme d'une chaîne de caractères, 
+Elle prend en argument un message (sous la forme d'une chaîne de caractères) (qui sera affiché dans la console), 
+    demande à l'utilisateur d'entrer une valeur (ET STOPPE L'EXECUTION du programme tant que entrée n'est pas pressée) et renvoie celle-ci sous forme d'une chaîne de caractères, 
     qu'il faut ensuite convertir si besoin.
 """
 
