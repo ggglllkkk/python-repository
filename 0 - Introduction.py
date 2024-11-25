@@ -1,4 +1,5 @@
-# créé par Mallet Mattéo
+# Créé par Mallet Mattéo
+# Merci à Emile pour son aide
 
 """
     Le python est un language de programmation très lisible, 
