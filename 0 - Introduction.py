@@ -48,9 +48,6 @@ exemple :
     - le nom d'une variable qui stockerait si un nombre est positif : isGreaterThanZero
 
 ⚠ Attention ⚠
-
-mé ui C klèr
-    
-
+    le nom d'une variable ne doit pas commencer ou être un nombre.
 """
 
