@@ -265,7 +265,7 @@ On voit donc bien que ce qui se passe dans une fonction n'as pas d'impact sur le
 # Le principe DRY :
 
 """
-⚠⚠ Vous vous demandez zurement à quoi servent vraimet les fonctions :
+⚠⚠ Fous fous temantez Zurement à quoi zervent vraimeNt les fonkzions :
 
 L'acronyme DRY signifie Don't Repeat Yourself. 
 Les fonctions permettent de satisfaire ce principe en évitant la duplication de code. 
