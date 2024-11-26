@@ -139,5 +139,87 @@ print("7  : ", carre_cube(2))
 
 """
 En réalité Python ne renvoie qu'un seul objet, mais celui-ci peut être séquentiel, 
-    c'est-à-dire contenir lui-même d'autres objets. Dans notre exemple, Python renvoie un objet de type tuple, type que nous avons vu dans le chapitre 8 Dictionnaires et tuples (souvenez-vous, il s'agit d'une sorte de liste avec des propriétés différentes). Notre fonction pourrait tout autant renvoyer une liste :
+    c'est-à-dire contenir lui-même d'autres objets. 
+    
+Dans notre exemple, 
+    Python renvoie un objet de type tuple, 
+    type que nous avons vu dans le chapitre 8 Dictionnaires et tuples 
+    (souvenez-vous, il s'agit d'une sorte de liste avec des propriétés différentes). 
+    
+Notre fonction pourrait tout autant renvoyer une liste :
 """
+
+def carre_cube2(x):
+    return [x**2, x**3]
+
+                            # Ici on remarque que cela va retourner [9, 27] c'est bien une liste.
+print("8  : ", carre_cube2(3))
+
+"""
+Renvoyer un tuple ou une liste de deux éléments (ou plus) 
+    est très pratique en conjonction avec l'affectation multiple, 
+    par exemple :
+"""
+
+z1, z2 = carre_cube2(3)
+
+print("9  : ", z1)          # Va retourner : 9
+print("10 : ", z2)          # Va retourner : 27
+
+# Une fonction peut renvoyer tout type de variable
+
+# Arguments positionnels et arguments par mot-clé
+
+"""
+Lorsqu'on définit une fonction def fct(x, y): 
+    les arguments x et y sont appelés arguments positionnels (en anglais, positional arguments). 
+    
+Il est strictement obligatoire de les préciser lors de l'appel de la fonction. 
+
+De plus, il est nécessaire de respecter le même ordre lors de l'appel que dans la définition de la fonction. 
+
+Dans l'exemple ci-dessus, 2 correspondra à x et 3 correspondra à y. 
+Finalement, tout dépendra de leur position, d'où leur qualification de positionnel.
+"""
+"""
+Mais il est aussi possible de passer un ou plusieurs argument(s) de manière facultative
+    et de leur attribuer une valeur par défaut :
+"""
+
+def fct(x=1):
+    return x
+
+print("11 : ", fct())       # Va retourner : 1
+print("12 : ", fct(10))     # Va retourner : 10
+
+"""
+Un argument défini avec une syntaxe def fct(arg=val): 
+    est appelé argument par mot-clé (en anglais, keyword argument). 
+    
+Le passage d'un tel argument lors de l'appel de la fonction est facultatif. 
+Ce type d'argument ne doit pas être confondu avec les arguments positionnels présentés ci-dessus, 
+    dont la syntaxe est def fct(arg):
+"""
+
+def fct(x=0, y=0, z=0):
+    return x, y, z
+
+print("13 : ", fct())       # Va retourner : (0, 0, 0)
+print("14 : ", fct(10))     # Va retourner : (10, 0, 0)
+print("15 : ", fct(10, 8))  # Va retourner : (10, 8, 0)
+
+                            # Va retourner : (10, 8, 9)
+print("16 : ", fct(10, 8, 9)) 
+
+"""
+On observe que pour l'instant, 
+    les arguments par mot-clé sont pris dans l'ordre dans lesquels on les passe lors de l'appel. 
+    
+Comment faire si l'on souhaitait préciser l'argument par mot-clé z et garder les valeurs de x et y par défaut ? 
+
+Simplement en précisant le nom de l'argument lors de l'appel :
+"""
+
+print("17 : ", fct(z = 10))  # Va retourner : (0, 0, 10)
+
+# Variables locales et variables globales :
