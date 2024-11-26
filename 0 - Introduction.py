@@ -48,9 +48,6 @@ exemple :
     - le nom d'une variable qui stockerai si un nombre est positif : isGreaterThanZero
 
 ⚠ Attention ⚠
-
-
-    
-
+    Le nom d'une variable ne dois pas commencer et ne dois pas être un nombre.
 """
 
