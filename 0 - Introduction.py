@@ -41,13 +41,16 @@ Pour améliorer la lisibilité de votre script par autrui ou pour vous même, il
 
 1 - un nom de variable doit toujours être en anglais.
 2 - un nom de variable doit toujours être en rapport avec son rôle.
-3 - pour nommer un variable, ne mettez pas d'espace, la première lettre du premier mot doit être en minuscule, la première lettre des autres mots doit être en majuscule :
+3 - pour nommer une variable, ne mettez pas d'espace, la première lettre du premier mot doit être en minuscule, la première lettre des autres mots doit être en majuscule :
 
 exemple :
-    - le nom d'une variable qui stockerai la vitesse d'une balle serai : ballVelocity
-    - le nom d'une variable qui stockerai si un nombre est positif : isGreaterThanZero
+    - le nom d'une variable qui stockerait la vitesse d'une balle serait : ballSpeed
+    - le nom d'une variable qui stockerait si un nombre est positif : isGreaterThanZero
 
 ⚠ Attention ⚠
-    Le nom d'une variable ne dois pas commencer et ne dois pas être un nombre.
+
+mé ui C klèr
+    
+
 """
 
