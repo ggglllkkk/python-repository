@@ -262,6 +262,33 @@ Alors même que l'on reassigne la valeur 3 à la variable y dans la fonction.
 On voit donc bien que ce qui se passe dans une fonction n'as pas d'impact sur les variables exterieures
 """
 
+# Pour changer cela, on utilise le mot clé "global" :
+
+    # Définition d'une fonction.
+def fct():
+    global y                # Ici on annonce que la fonction y est la même à l'interieur qu'à l'exterieur de la fonction
+    y = 3
+    print("20 : ", var)  
+
+
+    # Programme principal.
+var = 5
+y = 7
+
+fct()
+print("21 : ", y)
+
+"""
+Il sera retourné :
+5
+3
+
+Donc ce qu'il s'est passé à l'interieur de la fonction à eu un impact sur la variable y,
+    pourtant à l'exterieur de la fonction.
+
+On peut mettre plusieurs variables derrière le global : global a, b, c, d, ..., z
+"""
+
 # Le principe DRY :
 
 """
