@@ -143,7 +143,7 @@ En réalité Python ne renvoie qu'un seul objet, mais celui-ci peut être séque
     
 Dans notre exemple, 
     Python renvoie un objet de type tuple, 
-    type que nous avons vu dans le chapitre 8 Dictionnaires et tuples 
+    type que nous avons vu dans le chapitre 4 Tuples 
     (souvenez-vous, il s'agit d'une sorte de liste avec des propriétés différentes). 
     
 Notre fonction pourrait tout autant renvoyer une liste :
@@ -212,6 +212,12 @@ print("15 : ", fct(10, 8))  # Va retourner : (10, 8, 0)
 print("16 : ", fct(10, 8, 9)) 
 
 """
+!!!!!! à noter que lorsque qu'on a des arguments initialisés par défaut ceux ci doivent être placés APRES ceux n'ayant pas de valeur par défaut dans
+la déclaration de la fonction!
+on écrit:      def calcul(x, y, z=0):
+et non pas:    def calcul(x, y=0, z):
+
+
 On observe que pour l'instant, 
     les arguments par mot-clé sont pris dans l'ordre dans lesquels on les passe lors de l'appel. 
     
