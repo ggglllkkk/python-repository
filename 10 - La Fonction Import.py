@@ -21,3 +21,85 @@ N'hésitez pas à explorer un peu ce site,
 """
 
 # Importation de modules :
+
+"""
+la notion de module est importante, notamment lorsque l'on veux tirer un nombre aléatoire :
+"""
+
+import random
+    # Ici on accède au module random, puis par le "." on accède à la fonction randint() de ce module.
+print("1  : ", random.randint(0, 10))
+
+"""
+Regardons de plus près cet exemple :
+
+Ligne 1. L'instruction import donne accès à toutes les fonctions du module random.
+
+Ligne 2. Nous utilisons la fonction randint(0, 10) du module random. 
+Cette fonction renvoie un nombre entier tiré aléatoirement entre 0 inclus et 10 inclus.
+"""
+
+"""
+Nous pouvons également croiser le module math .
+Ce module nous donne accès aux fonctions trigonométriques sinus et cosinus, et à la constante pi :
+"""
+
+import math
+    # Ici on accède au module math, puis par le "." on accède à la fonction cos() de ce module.
+    # Cela va retourner : 6.123233995736766e-17 ce qui est "presque" 0
+print("2  : ", math.cos(math.pi / 2))
+
+"""
+En résumé, 
+    l'utilisation de la syntaxe import nomDuModule permet d'importer tout une série de fonctions organisées par « thèmes ».
+Par exemple, les fonctions gérant les nombres aléatoires avec random et les fonctions mathématiques avec math. 
+Python possède de nombreux autres modules internes (c'est-à-dire présent de base lorsqu'on installe Python).
+"""
+
+# Il existe un autre moyen d'importer une ou plusieurs fonctions d'un module :
+
+from random import randint
+print("3  : ", randint(0,10))
+
+"""
+À l'aide du mot-clé from, on peut importer une fonction spécifique d'un module donné. 
+Remarquez bien qu'il est inutile de répéter le nom du module dans ce cas : seul le nom de la fonction en question est requis.
+"""
+
+# On peut également importer toutes les fonctions d'un module :
+
+from random import *
+print("4  : ", randint(0,50))
+
+"""
+L'instruction from random import * importe toutes les fonctions du module random. 
+On peut utiliser toutes ses fonctions directement, 
+    comme par exemple randint() et uniform() qui renvoient des nombres aléatoires entiers et floats.
+"""
+
+# Dans la pratique, plutôt que de charger toutes les fonctions d'un module en une seule fois :
+
+from random import *
+
+# Nous vous conseillons de charger le module seul de la manière suivante :
+
+import random
+
+# Enfin, pour vider de la mémoire un module déjà chargé, on peut utiliser l'instruction del :
+
+del random
+
+"""
+⚠⚠⚠ ATTENTION ⚠⚠⚠
+
+la methode :
+from nomDuModule import *
+
+Est dangereuse, en effet, 
+    si vous aves defini dans votre script un fonction qui possède le même nom que l'une de celle contenu dans le module importé,
+    (parfois plus de 200)
+    alors vous allez avoir des résultat étranges sans forcément avoir une erreur, 
+    votre script preferant utiliser la fonction du module plutôt que la votre.
+"""
+
+# Le mot clé "as" :
