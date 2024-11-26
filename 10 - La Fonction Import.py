@@ -103,3 +103,15 @@ Est dangereuse, en effet,
 """
 
 # Le mot clé "as" :
+
+"""
+Des fois, les modules ont des noms compliqués à écrire et ré-écrire, mais si on fait un import * on aurait des problèmes à cause des noms de fonctions
+du module qui coinciderait avec des fonctions définies par l'utilisateur dans le programme.
+
+Dans ce cas, on peut utiliser le mot clé "as" afin de "renommer" le module dans notre programme.
+Exemple: (import du module tkinter)
+"""
+
+import tkinter     # A chaque fois qu'on a besoin d'une fonction tkinter il faut retaper le nom en complet, c'est long et il est fort probable qu'on fasse des erreurs
+
+import tkinter as tk     # Maintenant je peut écrire tk.button() au lieu de tkinter.button()
