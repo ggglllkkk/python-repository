@@ -115,3 +115,4 @@ Exemple: (import du module tkinter)
 import tkinter     # A chaque fois qu'on a besoin d'une fonction tkinter il faut retaper le nom en complet, c'est long et il est fort probable qu'on fasse des erreurs
 
 import tkinter as tk     # Maintenant je peut écrire tk.button() au lieu de tkinter.button()
+
