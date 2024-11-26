@@ -223,3 +223,43 @@ Simplement en précisant le nom de l'argument lors de l'appel :
 print("17 : ", fct(z = 10))  # Va retourner : (0, 0, 10)
 
 # Variables locales et variables globales :
+
+"""
+Lorsqu'on manipule des fonctions, 
+    il est essentiel de bien comprendre comment se comportent les variables. 
+
+Une variable est dite locale lorsqu'elle est créée dans une fonction. 
+Elle n'existera et ne sera visible que lors de l'exécution de ladite fonction.
+
+Une variable est dite globale lorsqu'elle est créée dans le programme principal. 
+Elle sera visible partout dans le programme.
+
+Ceci ne vous paraît pas clair ? 
+Nous allons prendre un exemple simple qui vous aidera à mieux saisir ces concepts. 
+
+Observez le code suivant :
+"""
+
+    # Définition d'une fonction.
+def fct():
+    y = 3
+    print("18 : ", var)  
+
+
+    # Programme principal.
+var = 5
+y = 7
+
+fct()
+print("19 : ", y) 
+
+"""
+Dans cet exemple, il sera retourné :
+5
+7
+
+Alors même que l'on reassigne la valeur 3 à la variable y dans la fonction.
+On voit donc bien que ce qui se passe dans une fonction n'as pas d'impact sur les variables exterieures
+
+
+"""
