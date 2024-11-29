@@ -81,6 +81,7 @@ Ici, la boucle while ne s'arretera pas tant que le try n'aura pas capturé aucun
     c'est à dire que l'utilisateur aura rentré une valeur que la fonction int() pourra transformer en int.
 
 On peut remplacer int(), par str(), bool() ... etc en fonction de ce que l'on souhaite obtenir.
+On peut aussi donner la fonction à appliquer en paramètre, car en effet, les fonctions sont aussi des objets. 
 """
 
 def VerifiedInput (text : str, func):
