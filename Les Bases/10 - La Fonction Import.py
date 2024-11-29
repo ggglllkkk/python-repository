@@ -1,118 +1,93 @@
 ############################################
-############ La Fonction import ############
+########## La Gestion Des Erreurs ##########
 ############################################
 
-# Définition : 
-
 """
-Les modules sont des programmes Python qui contiennent des fonctions que l'on est amené à souvent réutiliser
-    (on les appelle aussi bibliothèques, ou libraries en anglais). 
-Ce sont des « boîtes à outils » qui vous seront très utiles.
+La base, en developpement informatique,
+    c'est de considerer l'utilisateur comme un idiot ...
 
-Les développeurs de Python ont mis au point de nombreux modules qui effectuent différentes tâches. 
-Pour cette raison, 
-    prenez toujours le réflexe de vérifier si une partie du code que vous souhaitez écrire n'existe pas déjà sous forme de module.
-
-La plupart de ces modules sont déjà installés dans les versions standards de Python. 
-Vous pouvez accéder à une documentation exhaustive sur le site de Python. 
-
-N'hésitez pas à explorer un peu ce site, 
-    la quantité de modules disponibles est impressionnante (plus de 300 modules).
+Imaginons la situation suivante :
 """
 
-# Importation de modules :
+print("1  : ", int(input("entrez un nombre : ")))
 
 """
-la notion de module est importante, notamment lorsque l'on veux tirer un nombre aléatoire :
-"""
+Qui vous dit que l'utilisateur va rentrer un nombre, et que se passera t'il s'il ne le fait pas ?
 
-import random
-    # Ici on accède au module random, puis par le "." on accède à la fonction randint() de ce module.
-print("1  : ", random.randint(0, 10))
+si l'utilisateur entre "bonjour" par exemple, voici l'erreur retounée :
 
-"""
-Regardons de plus près cet exemple :
+print("1  : ", int(input("entrez un nombre : ")))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'bonjour'
 
-Ligne 1. L'instruction import donne accès à toutes les fonctions du module random.
-
-Ligne 2. Nous utilisons la fonction randint(0, 10) du module random. 
-Cette fonction renvoie un nombre entier tiré aléatoirement entre 0 inclus et 10 inclus.
+Donc il serait interressant d'avoir un moyen de gerer les erreurs :
 """
 
 """
-Nous pouvons également croiser le module math .
-Ce module nous donne accès aux fonctions trigonométriques sinus et cosinus, et à la constante pi :
+Pour cela on utilise les mots clés "try" et "except", 
+    voici un exemple :
 """
 
-import math
-    # Ici on accède au module math, puis par le "." on accède à la fonction cos() de ce module.
-    # Cela va retourner : 6.123233995736766e-17 ce qui est "presque" 0
-print("2  : ", math.cos(math.pi / 2))
+try :
+    print("2  : ", int(input("entrez un nombre : ")))
+except:
+    print("2  : ", "une erreur est survenue")
 
 """
-En résumé, 
-    l'utilisation de la syntaxe import nomDuModule permet d'importer tout une série de fonctions organisées par « thèmes ».
-Par exemple, les fonctions gérant les nombres aléatoires avec random et les fonctions mathématiques avec math. 
-Python possède de nombreux autres modules internes (c'est-à-dire présent de base lorsqu'on installe Python).
+Ici, est executé uniquement ce qui est indenté avec le "try", 
+    si une erreur survient alors l'execution s'interromp et repprend après le "except"
+
+Comme on a pu le voir au dessus, il y a différent type d'erreurs,
+    tel que : "ValueError", "TypeError", "NameError" ... etc
+
+On peut donc specifier au except l'erreur qu'il doit capturer, je sous entend aussi, 
+    que comme les conditions, un "try" peut admettre plusieurs "except".
 """
 
-# Il existe un autre moyen d'importer une ou plusieurs fonctions d'un module :
-
-from random import randint
-print("3  : ", randint(0,10))
-
-"""
-À l'aide du mot-clé from, on peut importer une fonction spécifique d'un module donné. 
-Remarquez bien qu'il est inutile de répéter le nom du module dans ce cas : seul le nom de la fonction en question est requis.
-"""
-
-# On peut également importer toutes les fonctions d'un module :
-
-from random import *
-print("4  : ", randint(0,50))
+try :
+    print("3  : ", int(input("entrez un nombre : ")))
+except ValueError:
+    print("3  : ", "une erreur de valeur est survenue")
+except TypeError:
+    print("3  : ", "une erreur de type est survenue")
+except NameError:
+    print("3  : ", "une erreur de nom est survenue")
 
 """
-L'instruction from random import * importe toutes les fonctions du module random. 
-On peut utiliser toutes ses fonctions directement, 
-    comme par exemple randint() et uniform() qui renvoient des nombres aléatoires entiers et floats.
+Enfin on peut aussi utiliser le mot clé "as" :
 """
 
-# Dans la pratique, plutôt que de charger toutes les fonctions d'un module en une seule fois :
-
-from random import *
-
-# Nous vous conseillons de charger le module seul de la manière suivante :
-
-import random
-
-# Enfin, pour vider de la mémoire un module déjà chargé, on peut utiliser l'instruction del :
-
-del random
+try :
+    print("4  : ", int(input("entrez un nombre : ")))
+except ValueError as e:
+        # Retournera : une erreur est survenue >>>  invalid literal for int() with base 10: 'E'
+    print("4  : ", "une erreur est survenue >>> ", e )
 
 """
-⚠⚠⚠ ATTENTION ⚠⚠⚠
-
-la methode :
-from nomDuModule import *
-
-Est dangereuse, en effet, 
-    si vous aves defini dans votre script un fonction qui possède le même nom que l'une de celle contenu dans le module importé,
-    (parfois plus de 200)
-    alors vous allez avoir des résultat étranges sans forcément avoir une erreur, 
-    votre script preferant utiliser la fonction du module plutôt que la votre.
+Voici un exmple concret de l'utilisation :
 """
 
-# Le mot clé "as" :
+def VerifiedInput (text : str):
+    while True:
+        try:
+            return int(input(text))
+        except:
+            print("invalid input")
+
+A = VerifiedInput("n  :  ")
 
 """
-Des fois, les modules ont des noms compliqués à écrire et ré-écrire, mais si on fait un import * on aurait des problèmes à cause des noms de fonctions
-du module qui coinciderait avec des fonctions définies par l'utilisateur dans le programme.
+Ici, la boucle while ne s'arretera pas tant que le try n'aura pas capturé aucune erreur, 
+    c'est à dire que l'utilisateur aura rentré une valeur que la fonction int() pourra transformer en int.
 
-Dans ce cas, on peut utiliser le mot clé "as" afin de "renommer" le module dans notre programme.
-Exemple: (import du module tkinter)
+On peut remplacer int(), par str(), bool() ... etc en fonction de ce que l'on souhaite obtenir.
 """
 
-import tkinter     # A chaque fois qu'on a besoin d'une fonction tkinter il faut retaper le nom en complet, c'est long et il est fort probable qu'on fasse des erreurs
+def VerifiedInput (text : str, func):
+    while True:
+        try:
+            return func(input(text))
+        except:
+            print("invalid input")
 
-import tkinter as tk     # Maintenant je peut écrire tk.button() au lieu de tkinter.button()
-
+A = VerifiedInput("n  :  ", int)
