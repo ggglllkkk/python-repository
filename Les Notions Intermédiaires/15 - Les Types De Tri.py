@@ -18,7 +18,7 @@ print("2: ", listeTriee)
 
 
 """
-Nous allons maintenant voir comment fonctionne le tri par insertion.
+            TRI PAR INSERTION
 
 Principe général:
 
@@ -28,7 +28,8 @@ Par défaut, la liste triée correspond au premier élément, on a donc :
 [0 , 89 , -7 , 18 , 52 , 3]
 trié|         pas trié
 
-Pour chaque élément non trié en partant de la gauche, on va le permuter avec le nombre le précédant tant que ce dernier n'est pas plus petit que celui sélectionné (ou qu'on atteigne le début de la liste).
+Pour chaque élément non trié en partant de la gauche, on va le stocker puis décaler vers la droite l'élément le précédent tant que ce dernier n'est pas plus petit que celui sélectionné (ou qu'on atteigne le début de la liste).
+Enfin, on placera l'élément sélectionné là où on s'arrete.
 Ainsi on aura:
 
 [0 , 89 , -7 , 18 , 52 , 3]     etat initial
@@ -37,6 +38,7 @@ trié|        pas trié
 
 On sélectionne 89.
 
+On pointe à l'indice 0.
 0<89 donc on s'arrete la. On a donc:
 [0 , 89 , -7 , 18 , 52 , 3]
 trié   |       pas trié
@@ -44,25 +46,30 @@ trié   |       pas trié
 
 On sélectionne -7.
 
-89>-7 donc on les permute. On a donc:
-[0, -7 , 89 , 18 , 52 , 3]
+On pointe à l'indice 1.
+89>-7 donc on le décale. On a donc:
+[0 , 89 , 89 , 18 , 52 , 3]
 
-0>-7 donc on les permute. On a donc:
-[-7 , 0 , 89 , 18 , 52 , 3]
+On pointe à l'indice 0.
+0>-7 donc on le décale. On a donc:
+[0 , 0 , 89 , 18 , 52 , 3]
 
--7 est en index 0 donc on s'arrete la. On a donc:
+On est arrivés à la fin de la liste donc on s'arrete la. On a donc:
 [-7 , 0 , 89 , 18 , 52 , 3]
-trié       |  pas trié
+    trié     |  pas trié
 
 
 On sélectionne 18.
 
-89>18 donc on les permute. On a donc:
-[-7 , 0 , 18 , 89 , 52 , 3]
+On pointe à l'indice 2.
+89>18 donc on le décale. On a donc:
+[-7 , 0 , 89 , 89 , 52 , 3]
 
+On pointe à l'indice 1.
 0<18 donc on s'arrete la. On a donc:
 [-7 , 0 , 18 , 89 , 52 , 3]
-trié              | pas trié
+      trié        |pas trié
+
 
 Et on continue ainsi jusqu'atteindre la fin de la liste.
 
@@ -71,18 +78,75 @@ En code, ça donne ceci:
 
 liste=[0, 89 , -7 , 18 , 52 , 3]
 
-for k in range(1, len(liste)):                         # boucle dans la liste (et commence à 1!)
-    i=k                                                # i sera la variable déterminant l'index actuel de l'élément sélectionné
-    while i!=0 and liste[i] < liste[i-1]:              # littéralement: TANT QU'on est pas au début de la liste ET que l'élément sélectionné plus petit que son prédécesseur
-        liste[i], liste[i-1] = liste[i-1], liste[i]    # on inverse l'élément sélectionné et son prédécesseur
-        i-=1                                           # on décale d'un cran vers la gauche
+for k in range(1, len(liste)):                         # on boucle dans la liste (et commence à 1!)
+    i=k                                                # i sera la variable déterminant l'indice actuel de où insérer l'élément sélectionné
+    elementSelectionne=liste[k]                        # on stocke la valeur de l'élément sélectionné
+    while i!=0 and elementSelectionne < liste[i-1]:    # littéralement: TANT QU'on est pas au début de la liste ET que l'élément sélectionné plus petit que l'élément à l'indice i-1
+        liste[i] = liste[i-1]                          # on décale l'élément d'indice i-1
+        i-=1                                           # on décrémente i
+    liste[i]=elementSelectionne                        # on place à i l'élément sélectionné
 
 print("3: ", liste)
 
 """
 Il suffit d'inverser le sens du comparateur pour inverser le sens de tri.
 
-⚠⚠⚠ Dans la condition du WHILE, il faut ECRIRE LE i!=0 EN PREMIER
-En effet, sinon, on cherche un index négatif qui n'existera pas (en python si mais on ne le veut pas)
-Par principe de fainéantise, si la première des deux clauses d'un AND est fausse, python ne lira pas la deuxième, évitant ainsi de potentielles erreurs d'index.
+!!!!!!! Dans la condition du WHILE, il faut ECRIRE LE i!=0 EN PREMIER
+En effet, sinon, on cherche un indice négatif qui n'existera pas (en python si mais on ne le veut pas)
+Par principe de fainéantise, si la première des deux clauses d'un AND est fausse, python ne lira pas la deuxième, évitant ainsi de potentielles erreurs d'indice.
 """
+
+
+
+"""
+            TRI PAR SELECTION
+
+Principe général:
+
+On considère notre liste à trier 'séparée' en deux parties, une triée et une non triée.
+Par défaut, la liste triée est vide, on a donc :
+
+[0 , 89 , -7 , 18 , 52 , 3]
+|         pas trié
+
+Tant que la liste non triée n'est pas vide, on va chercher son élément le plus petit puis l'échanger avec le 1er élément de la liste non triée.
+Ainsi, on aura:
+
+[0 , 89 , -7 , 18 , 52 , 3]    état initial
+|         pas trié
+
+
+1er tour de liste:
+on trouve que -7 est le minimum, on a donc:
+[-7 , 89, 0 , 18 , 52 , 3]
+trié|       pas trié
+
+
+2e tour de liste:
+on trouve que 0 est le minimum, on a donc:
+[-7 , 0 , 89 , 18 , 52 , 3]
+  trié  |     pas trié
+
+
+3e tour de liste:
+on trouve que 3 est le minimum, on a donc:
+[-7 , 0 , 3 , 18 , 52 , 89]
+     trié   |     pas trié
+
+Et on continue jusqu'à la fin de la liste.
+
+En code, on a ça:
+"""
+
+liste=[0, 89 , -7 , 18 , 52 , 3]
+
+for k in range(len(liste)):                           # on boucle dans la liste
+    indiceDuMinimum=k                                 # on initialise l'indice du minimum comme étant celui du 1er élément de la liste non triée
+    for n in range(indiceDuMinimum, len(liste)):      # on parcourt la liste non triée
+        if liste[n] < liste[indiceDuMinimum]:         # on compare la valeur du minimum actuellement trouvé et de l'élément à l'indice n
+            indiceDuMinimum=n                         # on remplace la valeur de l'indice du minimum
+    
+    liste[indiceDuMinimum], liste[k] = liste[k], liste[indiceDuMinimum]  # on permute le minimum et le premier élément de la liste non triée
+
+
+print("3 :", liste)
