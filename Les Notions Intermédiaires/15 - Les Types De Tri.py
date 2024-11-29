@@ -82,7 +82,7 @@ print("3: ", liste)
 """
 Il suffit d'inverser le sens du comparateur pour inverser le sens de tri.
 
-!!!!!!! Dans la condition du WHILE, il faut ECRIRE LE i!=0 EN PREMIER
+⚠⚠⚠ Dans la condition du WHILE, il faut ECRIRE LE i!=0 EN PREMIER
 En effet, sinon, on cherche un index négatif qui n'existera pas (en python si mais on ne le veut pas)
 Par principe de fainéantise, si la première des deux clauses d'un AND est fausse, python ne lira pas la deuxième, évitant ainsi de potentielles erreurs d'index.
 """
