@@ -330,3 +330,30 @@ class Citron:
 
 if __name__ == "__main__":
     citron1 = Citron("jaune pâle")
+
+"""
+Ligne 4. Nous appelons ici la méthode .affiche_message() depuis le constructeur. 
+    Pour appeler cette méthode interne à la classe Citron, on doit utiliser une syntaxe self.méthode(). 
+    Le self sert donc pour accéder aux attributs, mais aussi aux méthodes, ou plus généralement à tout ce qui est accroché à la classe.
+
+Lignes 6 et 7. La méthode .affiche_message() est exécutée. 
+    On peut se poser la question « Pourquoi passer l'argument self à cette méthode alors qu'on ne s'en sert pas dans celle-ci ? »
+
+Ligne 11. On crée l'instance citron1 en lui passant l'argument "jaune pâle". 
+    La variable d'instance couleur prendra ainsi cette valeur au lieu de celle par défaut ("jaune"). 
+    À noter, l'instanciation affichera le message Le citron c'est trop bon ! puisque la méthode .affiche_attributs()
+        est appelée dans le constructeur .__init__()
+"""
+
+"""
+⚠⚠⚠ Attention ⚠⚠⚠
+Même si on ne se sert d'aucun attribut dans une méthode, 
+    l'argument self (ou quel que soit son nom) est strictement obligatoire. 
+
+En fait, la notation citron1.affiche_message() est équivalente à Citron.affiche_message(citron1). 
+Testez les deux pour voir ! Dans cette dernière instruction, 
+    on appelle la méthode accrochée à la classe Citron et on lui passe explicitement l'instance citron1 en tant qu'argument. 
+
+La notation citron1.affiche_message() contient donc en filigrane un argument, 
+    à savoir la référence vers l'instance citron1 que l'on appelle self au sein de la méthode.
+"""
