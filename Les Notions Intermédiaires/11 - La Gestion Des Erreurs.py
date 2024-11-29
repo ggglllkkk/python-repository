@@ -62,3 +62,32 @@ try :
 except ValueError as e:
         # Retournera : une erreur est survenue >>>  invalid literal for int() with base 10: 'E'
     print("4  : ", "une erreur est survenue >>> ", e )
+
+"""
+Voici un exmple concret de l'utilisation :
+"""
+
+def VerifiedInput (text : str):
+    while True:
+        try:
+            return int(input(text))
+        except:
+            print("invalid input")
+
+A = VerifiedInput("n  :  ")
+
+"""
+Ici, la boucle while ne s'arretera pas tant que le try n'aura pas capturé aucune erreur, 
+    c'est à dire que l'utilisateur aura rentré une valeur que la fonction int() pourra transformer en int.
+
+On peut remplacer int(), par str(), bool() ... etc en fonction de ce que l'on souhaite obtenir.
+"""
+
+def VerifiedInput (text : str, func):
+    while True:
+        try:
+            return func(input(text))
+        except:
+            print("invalid input")
+
+A = VerifiedInput("n  :  ", int)
